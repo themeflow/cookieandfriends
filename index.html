@@ -8,38 +8,48 @@
   </head>
 
   <style>
-    .container {
-      width: 100%;
-      margin: 0px auto;
-    }
-
-    .VIDEO__WRAPPER {
+    .HERO__VIDEO {
+      max-width: 960px;
+      margin: 0 auto;
       display: flex;
-      justify-content: center;
+      flex-direction: row;
+      align-content: center;
+      justify-content: space-between;
       align-items: flex-start;
+    }
+    .VIDEO__WRAPPER {
+      width: 100%;
+      min-height: 500px;
+      max-width: 880px;
     }
 
     #bg-video {
-      max-width: 700px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button#mute-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
     }
   </style>
-
   <body>
-    <div class="container">
+    <div class="HERO__VIDEO">
       <div class="VIDEO__WRAPPER">
         <video id="bg-video" autoplay loop muted>
-          <source
-            src="Assets/Videos/Cookies&Berlin.mp4"
-            type="video/mp4"
-          />
+          <source src="Assets/Videos/Cookies&Berlin.mov" type="video/mp4" />
           <source src="video.webm" type="video/webm" />
         </video>
-        <button id="mute-button">
-          <img src="Assets/Icons/Sound Icon.svg" alt="" />
-        </button>
       </div>
+      <button id="mute-button">
+        <img
+          src="https://uploads-ssl.webflow.com/62f32055e3e506f5a0c95738/63ac15d7acaa430d1f49b013_Sound%20Icon.svg"
+          alt=""
+        />
+      </button>
     </div>
-
     <script>
       var video = document.getElementById("bg-video");
       var muteButton = document.getElementById("mute-button");
